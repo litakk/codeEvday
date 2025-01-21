@@ -1,12 +1,18 @@
 // Изучение JavaScript
 
-let myName
+// Ссылочный тип - object: [] , {} 
 
-console.log(myName)
+const objectA = {
+    a: 10,
+    b: true
+}
 
-myName = 'Bogdan'
+const copyOfA = objectA
 
-console.log(myName)
+copyOfA.a = 20
+copyOfA.c = 'abc'
 
-console.log(console.log(10))
 
+console.log(objectA)
+
+// objectA.a -> 20
