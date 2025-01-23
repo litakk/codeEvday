@@ -14,5 +14,3 @@ copyOfA.c = 'abc'
 
 
 console.log(objectA)
-
-// objectA.a -> 20
