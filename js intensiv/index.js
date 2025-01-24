@@ -102,10 +102,10 @@ console.log(JSON.parse(postStringified))
 
 let a = 10
 
-if (a < 10) {
+if (a <= 10) {
     console.log("Вам меньше 10 лет")
 } else {
-    console.log("Доступ запрещён")
+    console.log("Доступ разрешён")
 }
 
 // --- --- --- --- --- --- --- --- --- --- --- ---
@@ -170,9 +170,12 @@ console.log(MyAgeNowCompare);
 
 // Создайте объект person с тремя свойствами:
 let person = {
+
     name: "Azamat",
     age: 18,
+
 }
+
 let isAdult = person.age === 18
 console.log(isAdult);
 
@@ -184,3 +187,43 @@ let MyAge = 18 % 2
 console.log(MyAge);
 
 // --- --- --- --- --- --- --- --- --- --- --- ---  
+
+// polindrom = madam
+
+let str = "MADAM"
+
+let lowCase = str.toLowerCase()
+let reverseStr = lowCase.split('').reverse().join("")
+if (lowCase == reverseStr) {
+    console.log("Polindrom")
+} else {
+    console.log("Not Polindrom")
+}
+
+// решил задачку сам
+
+// перевести полиндром в функцию
+
+function Полиндром(str) {
+    let нижнийРегистр = str.toLowerCase()
+    let перевернуть = нижнийРегистр.split('').reverse().join('')
+
+    if (нижнийРегистр == перевернуть) {
+        console.log("Это полиндром")
+    } else {
+        console.log('Не полиндром')
+    }
+};
+
+// --- --- --- --- --- --- --- --- --- --- --- ---  
+
+// Math.floor() - округляет число в меньшую сторону
+// Math.round() - округляет число в большую сторону
+// Math.random() - берет рандомное число из заданного целого числа
+
+let h = 1.5
+let s = Math.random(h)
+console.log(s)
+
+// --- --- --- --- --- --- --- --- --- --- --- ---  
+
