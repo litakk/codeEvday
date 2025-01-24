@@ -227,7 +227,7 @@ console.log(s)
 
 // --- --- --- --- --- --- --- --- --- --- --- ---  
 
-let text7 = "Robin Singh from USA."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+let text7 = "Robin Singh from USA."
 let result = text7.replace(/ /g, "-").toLowerCase()
 console.log(result)
 
@@ -243,6 +243,46 @@ console.log(result)
 // var (устаревший, используется редко).
 // let (рекомендуемый для изменяемых значений).
 // const (для неизменяемых значений).
+
+// --- --- --- --- --- --- --- --- --- --- --- ---  
+
+// EXAMPLE CALLBACK FUNCTION ->
+
+// Функция, которая принимает callback
+function greet(name, callback) {
+    console.log("Привет, " + name);
+    callback(); // Вызов callback после выполнения приветствия
+}
+
+// Callback функция
+function sayGoodbye() {
+    console.log("До свидания!");
+}
+
+// Вызов функции с callback
+greet("Иван", sayGoodbye);
+
+// --- --- --- --- --- --- --- --- --- --- --- ---  
+
+// БОЛЕЕ СЛОЖНЫЙ ПРИМЕР CALLBACK
+
+function printMyName() {
+    console.log("Bogdan")
+}
+
+console.log("Start")
+
+setTimeout(printMyName, 3000)
+
+// --- --- --- --- --- --- --- --- --- --- --- ---  
+
+// Работая с ОБЪЕКТАМИ, не стоит изменять оригинальный объект напрямую,
+// лучше создать копию и работать с ней
+
+const obj1 = { name: "Alice" };
+const obj2 = { ...obj1 }; // создаем поверхностную копию
+obj2.name = "Bob";
+console.log(obj1.name); // выведет "Alice" — obj1 не изменяется
 
 // --- --- --- --- --- --- --- --- --- --- --- ---  
 
