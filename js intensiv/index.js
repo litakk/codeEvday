@@ -99,3 +99,28 @@ console.log(JSON.parse(postStringified))
 // JSON.parse() принимает строку в формате JSON и преобразует её обратно в объект.
 
 // --- --- --- --- --- --- --- --- --- --- --- ---
+
+let a = 10
+
+if (a < 10) {
+    console.log("Вам меньше 10 лет")
+} else {
+    console.log("Доступ запрещён")
+}
+
+// --- --- --- --- --- --- --- --- --- --- --- ---
+
+let temperature = 10;
+
+if (temperature > 30) {
+    console.log("Жарко");
+} else if (temperature > 15) {
+    console.log("Тепло");
+} else if (temperature > 0) {
+    console.log("Прохладно");
+} else {
+    console.log("Холодно");
+}
+
+// --- --- --- --- --- --- --- --- --- --- --- ---  
+
