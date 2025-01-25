@@ -433,7 +433,8 @@ ar.splice(2, 1,)
 console.log(ar)
 
 let newArr = [...myArray, 4];  // создаём новый массив с добавленным элементом 4
-console.log(newArr[0,1])
+// console.log(newArr[0])
+// console.log(newArr[0,1])
 console.log(newArr)
 
 // --- --- --- --- --- --- --- --- --- --- --- ---
