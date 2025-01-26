@@ -200,7 +200,7 @@ let number = 10;
 
 if (number > 5) {
     console.log("число больше чем 5")
-} else if ( number === 5) {
+} else if (number === 5) {
     console.log("число равно 5")
 } else {
     console.log("ошибка")
