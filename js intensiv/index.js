@@ -1062,10 +1062,10 @@ lion.makeSound(); // "Лев говорит: Рррр!"
 
 // ПОЛУЧЕНИЕ ДАННЫХ С ПОМОЩЬЮ FETCH API
 
-fetch('https://jsonplaceholder.typicode.com/todos')
-    .then(response => response.json())
-    .then(json => console.log(json))
-    .catch(error => console.log(error))
+// fetch('https://jsonplaceholder.typicode.com/todos')
+//     .then(response => response.json())
+//     .then(json => console.log(json))
+//     .catch(error => console.log(error))
 
 
 // Пример на практике:
@@ -1082,3 +1082,38 @@ fetch('https://jsonplaceholder.typicode.com/todos')
 
 // JSON - отправка JavaScript объектов просто в виде строк
 
+// --- --- --- --- --- --- --- --- --- --- --- ---
+
+// ASYNC/AWAIT => это:
+// СПЕЦИАЛЬНЫЙ СИНТАКСИС ДЛЯ УПРОЩЕНИЯ РАБОТЫ С ПРОМИСАМИ
+// ОН ПОЯВИЛСЯ В ES6 В 2015 ГОДУ
+//  ЧТО ЖЕ ТАКОЕ АССИНХРОНАЯ ФУНКЦИЯ? ВМЕСТО КАКОГО-ТО ЗНАЧЕНИЯ - ВОЗВРАЩАЕТ ПРОМИС
+
+// АСИНХРОННАЯ ФУНКЦИЯ
+
+// async function asyncFn() {
+    // Всегда возвращает Промис
+// }
+
+// СТРЕЛОЧНАЯ ФУНКЦИЯ В АССИНХРОННОСТИ 
+// const asyncFn = async () => {
+    // Всегда возвращает Промис
+// }
+
+// async/await => async возвращает промис, await - ожидает результата промиса (то есть не выполниться пока промис не выдаст результат)
+
+// ОЖИДАНИЕ РЕЗУЛЬТАТА AWAIT
+
+const timerPromise = () =>
+  new Promise((resolve, reject) =>
+  setTimeout(() => resolve(), 2000))
+
+const asyncFn = async () => {
+    console.log('Timer starts')
+    const startTime = performance.now()
+    await timerPromise()
+    const endTime = performance.now()
+    console.log('Timer ended', endTime - startTime)
+}
+
+// --- --- --- --- --- --- --- --- --- --- --- ---
