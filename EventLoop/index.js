@@ -83,6 +83,8 @@ setTimeout(function() {
 
 console.log(3);
 
+// --- --- --- --- --- --- --- --- --- --- --- ---
+
 // ОБЪЯСНЕНИЕ:
 
 // Последовательность:
@@ -93,3 +95,6 @@ console.log(3);
 // setTimeout завершает свою работу и передает callback в Callback Queue.
 // Event Loop проверяет Callback Queue, когда стек пуст.
 // Event Loop выполняет callback: console.log(2) → 2
+
+// --- --- --- --- --- --- --- --- --- --- --- ---
+
