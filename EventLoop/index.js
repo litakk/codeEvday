@@ -44,7 +44,7 @@ console.log("Конец программы");
 
 const promise = new Promise((resolve, reject) => {
   console.log("Создание промиса (pending)...");
-  
+
   setTimeout(() => {
     if (Math.random() > 0.5) {
       resolve("✅ Успех!");
@@ -90,4 +90,20 @@ console.log(3);
 // Callback Queue (Очередь обратных вызовов) - хранит задачи для выполнения после завершения стека.
 // Microtask Queue (Очередь микрозадач) - выполняет промисы перед задачами из Callback Queue.
 // Event Loop - управляет порядком выполнения кода, проверяет очереди и стек вызовов.
+// --------------------------------
+
+// Задача: написать функцию которая находит минимальный элемент
+// let ress = [...numm].sort((a, b) => a - b);
+
+
+function Minnum(arr) {
+  let min = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return min;
+}
+console.log(Minnum([1,2,3,4]))
 // --------------------------------
