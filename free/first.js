@@ -60,13 +60,127 @@ age -= 3; // минус 3 и сохранить в переменную => пе�
 
 const myStatus = "pending"; // ready, pending, failed
 
-if (myStatus === "ready") {
-  console.log("lets go");
-} else if (myStatus === "pending") {
-  console.log("be prepared");
-} else {
-  console.log("failed");
+// if (myStatus === "ready") {
+//   console.log("lets go");
+// } else if (myStatus === "pending") {
+//   console.log("be prepared");
+// } else {
+//   console.log("failed");
+// }
+
+// - - -
+
+// function
+
+function calc(year) {
+  const date = new Date().getFullYear() - year;
+
+  if (date < 0) {
+    console.log("you are not born yet");
+  }
+  return date;
 }
+// console.log(calc(2025))
+
+// - - -
+
+// array
+
+const cars = ["tesla", "porsche", "bmw"];
+// console.log(cars.length);
+// console.log(cars[0]);
+// console.log(cars[cars.length - 1]);
+
+// for(let car of cars) {
+// console.log(car);
+// }
+
+// cars.push('audi') // добавить в конец
+// cars.pop('audi') // удалить в конце
+
+// cars.unshift('audi') // добавить в начало
+// cars.shift('audi') // удалить в начале
+
+// let t = cars.pop() // log(audi)
+
+// - - -
+
+// Objects
+
+// объекты в JavaScript - это ключ: значение
+
+// const person = {
+//   firstName: "Vladilen",
+//   lastName: "Minin",
+//   year: 1993,
+//   langs: ["en", "ru"],
+//   isProgrammer: true,
+//   greet() {
+//     console.log("hello from person ");
+//   },
+// };
+
+// console.log(person); // вернёт все ключ: значение
+// console.log(person.firstName); // => Vladilen
+// console.log(person['lastName']); // => Minin
+
+//  динамический ключ:
+// const key = 'year'
+// console.log(person[key]);
+
+// - - -
+
+// Function Declaration
+function greet(name) {
+  console.log("Hello from", name);
+}
+greet("Xazratik");
+
+// Function Expression
+const greet2 = function (name) {
+  console.log("Hello from", name);
+};
+greet2("Xazratik");
+
+// разница в том, что Function Declaration можно вызвать до объявления функции, а Function Expression вернёт ошибку!
+
+// - - -
+
+// variant - 1
+// const arror = (name) => {
+//     console.log('Hello from', name);
+//  }
+// arror('Max')
+
+// variant - 2
+// const arror2 = (name) => console.log('Hello from', name);
+// arror2('Max')
+
+// - - -
+
+// rest operator
+function sumAll(...all) {
+  let res = 0;
+  for (let n of all) {
+    res += n;
+  }
+  return console.log(res);
+  ;
+}
+// sumAll(1,2,3)
+
+// rest - собирает
+// spread - разворачивает
+
+// - - -
+
+// reduce
+function sumAll2(...all) {
+return all.reduce((acc,n) => {
+return (acc += n)
+}, 0)
+}
+console.log(sumAll2(1,2,3))
 
 // - - -
 
