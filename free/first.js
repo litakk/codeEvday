@@ -165,7 +165,6 @@ function sumAll(...all) {
     res += n;
   }
   return console.log(res);
-  ;
 }
 // sumAll(1,2,3)
 
@@ -176,11 +175,39 @@ function sumAll(...all) {
 
 // reduce
 function sumAll2(...all) {
-return all.reduce((acc,n) => {
-return (acc += n)
-}, 0)
+  return all.reduce((acc, n) => {
+    return (acc += n);
+  }, 0);
 }
-console.log(sumAll2(1,2,3))
+console.log(sumAll2(1, 2, 3));
 
 // - - -
 
+// замыкание -> «Это функция, которая запоминает внешние переменные, даже после завершения родительской функции»
+
+function CreateMember(firstName) {
+  return function (lastName) {
+    console.log(firstName + " " + lastName);
+  };
+}
+
+let logWithLastName = CreateMember("John");
+logWithLastName("Doe");
+
+// - - -
+
+function Counter() {
+  let count = 0;
+
+  return function () {
+    console.log(count++);
+  };
+}
+
+let res = Counter()
+
+res()
+res()
+res()
+
+// - - -
