@@ -159,13 +159,13 @@ greet2("Xazratik");
 // - - -
 
 // rest operator
-function sumAll(...all) {
-  let res = 0;
-  for (let n of all) {
-    res += n;
-  }
-  return console.log(res);
-}
+// function sumAll(...all) {
+//   let res = 0;
+//   for (let n of all) {
+//     res += n;
+//   }
+//   return console.log(res);
+// }
 // sumAll(1,2,3)
 
 // rest - собирает
@@ -204,10 +204,16 @@ function Counter() {
   };
 }
 
-let res = Counter()
+let res = Counter();
 
-res()
-res()
-res()
+// res()
+// res()
+// res()
 
 // - - -
+
+let users = ["alice", "mahmud", "barashek", "azamatishakushka"];
+
+users.forEach((user) => {
+  console.log("privet" + " " + user);
+});
