@@ -1,0 +1,181 @@
+✅ Часть 1. React (основа)
+
+Theme: JSX
+🇷🇺 JSX — это синтаксис, который позволяет писать HTML-подобный код внутри JavaScript. Он используется в React для описания интерфейса.
+🇬🇧 JSX is a syntax that lets you write HTML-like code inside JavaScript. It is used in React to describe the UI.
+
+const App = () => <h1>Hello, world!</h1>;
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Components
+🇷🇺 Компоненты — это функции, которые возвращают JSX. Они позволяют делить интерфейс на маленькие части.
+🇬🇧 Components are functions that return JSX. They let you split the UI into small parts.
+
+function Welcome() {
+  return <p>Welcome to my app</p>;
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Props
+🇷🇺 Пропсы — это способ передать данные от родителя к дочернему компоненту.
+🇬🇧 Props are a way to pass data from a parent to a child component.
+
+function Greeting(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: useState
+🇷🇺 useState — это хук, который позволяет сохранять состояние и обновлять его.
+🇬🇧 useState is a hook that lets you store and update state in a component.
+
+const [count, setCount] = useState(0);
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: useEffect
+🇷🇺 useEffect — это хук для выполнения побочных эффектов: загрузка данных, таймеры и т.п.
+🇬🇧 useEffect is a hook to run side effects like data loading, timers.
+
+useEffect(() => {
+  console.log('Component mounted');
+}, []);
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Conditional Rendering
+🇷🇺 React позволяет рендерить элементы по условиям.
+🇬🇧 React lets you render elements based on a condition.
+
+{isLoggedIn ? <Dashboard /> : <Login />}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Lists and Keys
+🇷🇺 Списки рендерятся через .map(), key нужен для оптимизации.
+🇬🇧 Lists are rendered using .map(), and key helps React update them faster.
+
+items.map(item => <li key={item.id}>{item.name}</li>)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Forms and Events
+🇷🇺 Формы обрабатываются через onChange, onSubmit.
+🇬🇧 Forms are handled using onChange, onSubmit.
+
+<input value={text} onChange={e => setText(e.target.value)} />
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: useRef
+🇷🇺 useRef позволяет получить доступ к DOM или хранить значение без рендера.
+🇬🇧 useRef lets you access DOM or store values without re-render.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: useContext
+🇷🇺 useContext позволяет передавать данные, не используя props на каждом уровне.
+🇬🇧 useContext lets you pass data without props at every level.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Component Lifecycle (фазы жизни)
+🇷🇺 В функциональных компонентах useEffect заменяет старые методы (componentDidMount, componentDidUpdate).
+🇬🇧 In functional components, useEffect replaces old lifecycle methods like componentDidMount.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+✅ Часть 2. Next.js (основа)
+
+Theme: What is Next.js?
+🇷🇺 Next.js — это фреймворк поверх React. Он добавляет SSR (серверный рендеринг), маршрутизацию и оптимизацию.
+🇬🇧 Next.js is a framework on top of React. It adds SSR (server-side rendering), routing, and optimization.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: File-based Routing
+🇷🇺 В Next.js каждая папка и файл в app/ или pages/ — это маршрут.
+🇬🇧 In Next.js, every folder and file in app/ or pages/ is a route.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Server Components vs Client Components
+🇷🇺 Server компоненты работают на сервере. Client — в браузере.
+🇬🇧 Server components run on the server. Client components run in the browser.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: API Routes
+🇷🇺 Можно создавать свои API прямо в Next.js (в папке api).
+🇬🇧 You can create your own API in Next.js (in the api folder).
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Static Generation vs Server-side Rendering
+🇷🇺 Static — страница генерируется на билде. Server-side — на каждый запрос.
+🇬🇧 Static means page is built at build time. Server-side means on every request.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: useRouter()
+🇷🇺 Хук для управления маршрутами.
+🇬🇧 A hook to manage routes.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+✅ Часть 3. TypeScript (в React)
+
+Theme: Зачем нужен TypeScript?
+🇷🇺 TypeScript помогает избежать ошибок. Он показывает, где ты передаёшь не тот тип.
+🇬🇧 TypeScript helps avoid bugs. It shows when you pass a wrong type.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Типизация props и state
+🇷🇺 Можно указать, какие типы принимает компонент.
+🇬🇧 You can define what types a component accepts.
+
+type Props = {
+  name: string;
+};
+
+const Hello = ({ name }: Props) => <h1>Hello, {name}</h1>;
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Типизация useState
+const [count, setCount] = useState<number>(0);
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Типизация функций
+const greet = (name: string): void => {
+  console.log('Hello', name);
+};
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Типизация событий
+const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {};
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Theme: Типизация useRef
+const inputRef = useRef<HTMLInputElement>(null);
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
