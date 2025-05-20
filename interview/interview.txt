@@ -28,15 +28,15 @@ number — a numeric value
 
 boolean — true or false
 
-null — manually set "empty" value
+null — value is set to nothing on purpose
 
-undefined — value is not set
+undefined — variable is declared but not assigned
 
 symbol — unique identifier
 
 bigint — large integer
 
-object — collections (objects, arrays, functions)
+object — An object is a collection of key-value pairs.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -74,7 +74,7 @@ null — значение задано вручную как "ничего"
 
 undefined — variable is declared but not assigned
 
-null — value is explicitly set to "nothing"
+null — value is set to nothing on purpose
 
 let x;        // undefined
 let y = null; // null
@@ -118,8 +118,11 @@ if (1) console.log("Truthy"); // выполнится
 === сравнивает и тип, и значение (строгое сравнение).
 
 🇬🇧
-== compares values with type coercion.
-=== compares both value and type (strict comparison).
+== compares values and changes types if needed.
+=== compares value and type, no changes.
+
+🔹 == — "double equals"
+🔹 === — "triple equals"
 
 "5" == 5  // true
 "5" === 5 // false
