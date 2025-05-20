@@ -1,3 +1,279 @@
+✅ Часть 0. JavaScript (основа)
+
+1. Theme: Data Types in JavaScript
+🇷🇺 В JavaScript существует 8 типов данных:
+
+string — строка
+
+number — число
+
+boolean — логическое значение (true/false)
+
+null — "пустое" значение
+
+undefined — значение не задано
+
+symbol — уникальный идентификатор
+
+bigint — большое целое число
+
+object — объект (включает массивы, функции и т.д.)
+
+
+🇬🇧 There are 8 data types in JavaScript:
+
+string — a text
+
+number — a numeric value
+
+boolean — true or false
+
+null — manually set "empty" value
+
+undefined — value is not set
+
+symbol — unique identifier
+
+bigint — large integer
+
+object — collections (objects, arrays, functions)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+2. Theme: let vs const vs var
+🇷🇺
+
+let — блочная область видимости, можно менять значение
+
+const — блочная, нельзя менять значение
+
+var — устаревший, область видимости — функция
+
+🇬🇧
+
+let — block-scoped, value can be changed
+
+const — block-scoped, value cannot be changed
+
+var — outdated, function-scoped
+
+let a = 1;
+const b = 2;
+var c = 3;
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+3. Theme: null vs undefined
+🇷🇺
+
+undefined — переменная объявлена, но значение не задано
+
+null — значение задано вручную как "ничего"
+
+🇬🇧
+
+undefined — variable is declared but not assigned
+
+null — value is explicitly set to "nothing"
+
+let x;        // undefined
+let y = null; // null
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+4. Theme: Hoisting
+🇷🇺
+Hoisting (поднятие) — это механизм, при котором объявления var и функций поднимаются вверх своей области видимости. let и const тоже поднимаются, но не инициализируются.
+
+🇬🇧
+Hoisting is a behavior where var and function declarations are moved to the top of their scope. let and const are hoisted too, but not initialized.
+
+console.log(a); // undefined
+var a = 5;
+
+console.log(b); // ReferenceError
+let b = 10;
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+5. Theme: Truthy and Falsy
+🇷🇺
+Falsy значения — это те, что интерпретируются как false в логических операциях:
+false, 0, "", null, undefined, NaN.
+Все остальные — truthy (истинные).
+
+🇬🇧
+Falsy values are interpreted as false in logical expressions:
+false, 0, "", null, undefined, NaN.
+Everything else is truthy.
+
+if (0) console.log("Falsy");
+if (1) console.log("Truthy"); // выполнится
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+6. Theme: == vs ===
+🇷🇺
+== сравнивает значения, при необходимости приводит типы.
+=== сравнивает и тип, и значение (строгое сравнение).
+
+🇬🇧
+== compares values with type coercion.
+=== compares both value and type (strict comparison).
+
+"5" == 5  // true
+"5" === 5 // false
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+7. Theme: Function Declaration vs Expression
+🇷🇺
+Function Declaration — поднимается (hoisting).
+Function Expression — не поднимается.
+
+🇬🇧
+Function Declaration is hoisted.
+Function Expression is not hoisted.
+
+// Declaration
+function sayHi() {
+  console.log("Hi");
+}
+
+// Expression
+const sayHello = function () {
+  console.log("Hello");
+};
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+8. Theme: Arrow Function
+🇷🇺
+Стрелочная функция — короткий синтаксис: () => {}
+Не имеет собственного this, берёт из внешнего контекста.
+
+🇬🇧
+Arrow function is a shorter syntax: () => {}
+It doesn’t have its own this, uses the outer context.
+
+const add = (a, b) => a + b;
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+9. Theme: Callback Function
+🇷🇺
+Callback — это функция, переданная в другую функцию и вызываемая внутри неё.
+
+🇬🇧
+Callback is a function passed to another function and executed inside it.
+
+function greet(name, callback) {
+  callback(`Hello, ${name}`);
+}
+greet("Tom", console.log);
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+10. Theme: for, while, forEach
+🇷🇺
+
+for — универсальный цикл
+
+while — пока условие истинно
+
+forEach — перебирает элементы массива (не прерывается)
+
+🇬🇧
+
+for — universal loop
+
+while — runs while condition is true
+
+forEach — iterates over array elements (can’t break)
+
+for (let i = 0; i < 3; i++) console.log(i);
+while (i < 3) console.log(i++);
+[1, 2, 3].forEach(num => console.log(num));
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+11. Theme: Object
+🇷🇺
+Объект — это коллекция пар ключ-значение.
+
+🇬🇧
+An object is a collection of key-value pairs.
+
+const user = { name: "Tom", age: 18 };
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+12. Theme: Array
+🇷🇺
+Массив — это упорядоченный список значений.
+
+🇬🇧
+An array is an ordered list of values.
+
+const numbers = [1, 2, 3];
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+13. Theme: Array Methods
+🇷🇺
+Методы массивов:
+
+Модифицирующие: push, pop, shift, unshift
+
+Перебирающие: map, filter, forEach, reduce
+
+🇬🇧
+Array methods:
+
+Mutating: push, pop, shift, unshift
+
+Iterating: map, filter, forEach, reduce
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+14. Theme: map() vs forEach()
+🇷🇺
+
+forEach — просто выполняет функцию
+
+map — возвращает новый массив
+
+🇬🇧
+
+forEach just runs a function
+
+map returns a new array
+
+[1, 2, 3].map(x => x * 2);     // [2, 4, 6]
+[1, 2, 3].forEach(x => x * 2); // ничего не вернёт
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+15. Theme: Spread Operator
+🇷🇺
+Оператор расширения (...) копирует элементы массива или свойства объекта.
+
+🇬🇧
+The spread operator (...) copies array elements or object properties.
+
+const arr = [1, 2];
+const copy = [...arr];
+
+const obj = { a: 1 };
+const clone = { ...obj };
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 ✅ Часть 1. React (основа)
 
 Theme: JSX
@@ -177,5 +453,3 @@ const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {};
 
 Theme: Типизация useRef
 const inputRef = useRef<HTMLInputElement>(null);
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
