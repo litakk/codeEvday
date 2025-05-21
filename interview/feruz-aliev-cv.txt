@@ -1,0 +1,28 @@
+Feruz Aliev
+   	 +998 90 462-16-17 |   aazizaliev2403@gmail.com | linkedin.com/in/litakk
+SKILLS­­
+    • Core: HTML, CSS, JavaScript (ES6+), TypeScript, Tailwind CSS, Responsive Design, Mobile-First Development, UI/UX Design
+    • Frameworks & Libraries: React, Next.js, React Router, Pages Router, App Router, Axios, React Hook Form, Shadcn/UI, Framer Motion
+    • Tools: Git, GitHub, REST API, Vite, Webpack, ESLint, Prettier, Netlify, Figma, Agile Development, BEM
+    • Additional: JSON Server, i18next, i18n, Localization, Node.js (basic), PostgreSQL, Prisma ORM
+
+WORK EXPERIENCE­­
+SamIT Global: Frontend Developer Intern                         	    	    	 Jan 2025 – Apr 2025
+• Developed a full-stack booking platform using React, TypeScript, and Tailwind CSS for managing real-time reservations
+• Implemented responsive UI with React Router and reusable components, improving user navigation and maintainability
+• ntegrated multilingual support with i18next and handled complex form validation using React Hook Form
+• Supported UI performance improvements by assisting in component refactoring and implementing lazy loading techniques
+• Collaborated in Agile sprints with designers via Figma and contributed to 10+ pull requests with peer reviews
+• Motivated self-starter who actively proposed UI improvements and optimized rendering performance by 15%
+• Ensured consistent cross-browser compatibility and accessibility across 5+ screen sizes and browsers
+
+EDUCATION
+School 21 – Software Engineering Program (by Sber & École 42)  		Aug 2024 – Present
+• Full-time, peer-to-peer learning program focused on algorithms, low-level programming (C), and web development
+• Completed projects in JavaScript, React, Git, and Node.js with peer code reviews and version control
+• Developed soft skills through teamwork and conflict resolution in a no-teacher, no-lecture environment
+• Part of the international 42 Network with campuses in over 25 countries
+IT PARK Uzbekistan - Front-End Development Certificate			  Jan 2024
+• Completed hands-on training in HTML5, CSS3, JavaScript (ES6+), React, and Vite
+• Built responsive and interactive single-page applications using modern front-end technologies
+• Earned certification confirming proficiency in front-end development best practices
