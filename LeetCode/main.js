@@ -26,8 +26,29 @@ function maxSum(arr) {
   console.log(result);
 }
 
-maxSum([2, 1, 3, 5, 4]);
+// maxSum([2, 1, 3, 5, 4]);
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  
+// Task: Palindrom
+
+function Palindrom(str) {
+  let replace = str.split("").reverse().join("");
+
+  if (str === replace) {
+    console.log(str +" is palindrom");
+  } else {
+    console.log(str + " is not palindrom");
+  }
+}
+// Palindrom("madam");
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
