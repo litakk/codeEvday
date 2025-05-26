@@ -36,7 +36,7 @@ function Palindrom(str) {
   let replace = str.split("").reverse().join("");
 
   if (str === replace) {
-    console.log(str +" is palindrom");
+    console.log(str + " is palindrom");
   } else {
     console.log(str + " is not palindrom");
   }
@@ -45,10 +45,12 @@ function Palindrom(str) {
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
-
+function IsAnagram(arg1, arg2) {
+  let sort1 = arg1.split("").sort().join("");
+  let sort2 = arg2.split("").sort().join("");
+  return sort1 == sort2;
+}
+console.log(IsAnagram("listen", "silent")); // true
+console.log(IsAnagram("hello", "world")); // false
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
