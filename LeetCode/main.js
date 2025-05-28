@@ -54,3 +54,22 @@ console.log(IsAnagram("listen", "silent")); // true
 console.log(IsAnagram("hello", "world")); // false
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+function range(start, end) {
+  const result = [];
+
+  if (start > end) {
+    return result;
+  }
+
+  for (let i = start; i <= end; i++) {
+    result.push(i);
+  }
+  return result;
+}
+console.log(range(0, 5)); // [0, 1, 2, 3, 4, 5]
+console.log(range(3, 3)); // [3]
+console.log(range(8, 0)); // [ ]
+console.log(range(0, 0)); // [0]
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
