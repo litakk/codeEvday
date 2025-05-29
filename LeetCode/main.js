@@ -50,8 +50,8 @@ function IsAnagram(arg1, arg2) {
   let sort2 = arg2.split("").sort().join("");
   return sort1 == sort2;
 }
-console.log(IsAnagram("listen", "silent")); // true
-console.log(IsAnagram("hello", "world")); // false
+// console.log(IsAnagram("listen", "silent")); // true
+// console.log(IsAnagram("hello", "world")); // false
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -67,9 +67,42 @@ function range(start, end) {
   }
   return result;
 }
-console.log(range(0, 5)); // [0, 1, 2, 3, 4, 5]
-console.log(range(3, 3)); // [3]
-console.log(range(8, 0)); // [ ]
-console.log(range(0, 0)); // [0]
+// console.log(range(0, 5)); // [0, 1, 2, 3, 4, 5]
+// console.log(range(3, 3)); // [3]
+// console.log(range(8, 0)); // [ ]
+// console.log(range(0, 0)); // [0]
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+function evenRange(start, end) {
+  const res = [];
+
+  if (start > end) {
+    return res;
+  }
+
+  for (let i = start; i <= end; i++) {
+    if (i % 2 === 0) {
+      res.push(i);
+    }
+  }
+  return res;
+}
+// console.log(evenRange(0, 5));
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+function sumMultiplesOf3Or5(number) {
+  let res = 0;
+
+  for (let i = 0; i <= number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      res += i
+    }
+  }
+  return res;
+}
+// console.log(sumMultiplesOf3Or5(10));\
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
