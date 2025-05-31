@@ -97,7 +97,7 @@ function sumMultiplesOf3Or5(number) {
 
   for (let i = 0; i <= number; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
-      res += i
+      res += i;
     }
   }
   return res;
@@ -109,20 +109,18 @@ function sumMultiplesOf3Or5(number) {
 // Получить массив без повторяющихся значений, сохраняя порядок их первого появления.
 
 function uniqueValues(arr) {
+  let ress = [];
 
-  let ress = []
-
-  for(let i = 0; i < arr.length; i++) {
-    if(!ress.includes(arr[i])) {
-      ress.push(arr[i])
+  for (let i = 0; i < arr.length; i++) {
+    if (!ress.includes(arr[i])) {
+      ress.push(arr[i]);
     }
   }
-  return ress
+  return ress;
 }
 
-uniqueValues([1, 2, 2, 3, 4, 4, 5]); // [1, 2, 3, 4, 5]
-uniqueValues(['a', 'b', 'a', 'c', 'b']); // ['a', 'b', 'c']
+// console.log(uniqueValues([1, 2, 2, 3, 4, 4, 5]));
+// console.log(uniqueValues(["a", "b", "a", "c", "b"]));
 uniqueValues([]); // []
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
