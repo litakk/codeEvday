@@ -125,6 +125,9 @@ uniqueValues([]); // []
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// en: Sum of array elements
+// ru: Суммирование массива
+
 function Acc(arr) {
   let result = 0;
 
