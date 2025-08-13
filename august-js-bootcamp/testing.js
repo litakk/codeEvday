@@ -132,4 +132,3 @@ user.greet.call(user); // "Alice"
 
 // apply — то же самое, но аргументы массивом
 user.greet.apply(user); // "Alice"
-
