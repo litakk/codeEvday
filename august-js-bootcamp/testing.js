@@ -132,3 +132,21 @@ user.greet.call(user); // "Alice"
 
 // apply — то же самое, но аргументы массивом
 user.greet.apply(user); // "Alice"
+
+
+// Прототипы и наследование
+
+function Auto(model, age) {
+  this.model = model;
+  this.age = age;
+}
+
+Auto.prototype.getInfo = function () {
+  console.log(`Model: ` + this.model, `Age: ` + this.age);
+};
+
+const toyota = new Auto("toyota", 2000);
+const nissan = new Auto("nissan", 1800);
+
+toyota.getInfo();
+nissan.getInfo();

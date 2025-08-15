@@ -169,3 +169,4 @@ closureExample("Я из вызова");
 
 
 console.log(this);
+
