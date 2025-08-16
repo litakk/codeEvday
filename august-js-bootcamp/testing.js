@@ -133,7 +133,6 @@ user.greet.call(user); // "Alice"
 // apply — то же самое, но аргументы массивом
 user.greet.apply(user); // "Alice"
 
-
 // Прототипы и наследование
 
 function Auto(model, age) {
@@ -150,3 +149,57 @@ const nissan = new Auto("nissan", 1800);
 
 toyota.getInfo();
 nissan.getInfo();
+
+
+// Классы в ES6, наследование
+
+
+
+// dev (объект) 
+//    ⬇ __proto__
+// Developer.prototype
+//    ⬇ __proto__
+// Student.prototype
+//    ⬇ __proto__
+// Object.prototype
+//    ⬇ __proto__
+// null
+
+
+
+// Цепочка поиска свойств: 
+// объект → __proto__ → родительский объект → Object.prototype → null
+
+// Родительский класс
+class Student {
+  country = "Земля"; // свойство по умолчанию
+
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sayHi() {
+    console.log(`Hello ${this.name}`);
+  }
+}
+
+// Класс-наследник
+class Developer extends Student {
+  constructor(name, age, language) {
+    super(name, age);           // вызываем constructor Student
+    this.language = language;   // добавляем своё свойство
+  }
+
+  code() {
+    console.log(`${this.name} пишет код на ${this.language}`);
+  }
+}
+
+// Создаём экземпляры
+const firstStudent = new Student("Petya Yan", 20);
+const dev = new Developer("Shon O'Malley", 22, "JavaScript");
+
+firstStudent.sayHi(); // Hello Petya Yan
+dev.sayHi();          // Hello Shon O'Malley (унаследованный метод)
+dev.code();           // Shon O'Malley пишет код на JavaScript
