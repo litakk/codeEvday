@@ -1,458 +1,257 @@
 ✅ Часть 0. JavaScript (основа)
 
-1. Theme: Data Types in JavaScript
-🇷🇺 В JavaScript существует 8 типов данных:
+1. Theme: Data Types in JavaScript  
+🇷🇺 В JavaScript существует 8 типов данных: string, number, boolean, null, undefined, symbol, bigint, object(function, object, array).  
+🇬🇧 There are 8 data types in JavaScript: string, number, boolean, null, undefined, symbol, bigint, object.
 
-string — строка
+2. Theme: let vs const vs var  
+🇷🇺 let — блочная область видимости, можно менять значение; const — блочная, нельзя менять значение; var — устаревший, область видимости — функция.  
+🇬🇧 let — block-scoped, value can be changed; const — block-scoped, value cannot be changed; var — outdated, function-scoped.
 
-number — число
+3. Theme: null vs undefined  
+🇷🇺 undefined — переменная объявлена, но значение не задано; null — значение задано вручную как "ничего".  
+🇬🇧 undefined — variable is declared but not assigned; null — value is set to nothing on purpose.
 
-boolean — логическое значение (true/false)
+4. Theme: Hoisting  
+🇷🇺 Hoisting (поднятие) — объявления var и функций поднимаются вверх области видимости. let и const тоже поднимаются, но не инициализируются.  
+🇬🇧 Hoisting is a behavior where var and function declarations are moved to the top of their scope. let and const are hoisted too, but not initialized.
 
-null — "пустое" значение
+5. Theme: Truthy and Falsy  
+🇷🇺 Falsy значения: false, 0, "", null, undefined, NaN. Остальные — truthy.  
+🇬🇧 Falsy values: false, 0, "", null, undefined, NaN. Everything else is truthy.
 
-undefined — значение не задано
+6. Theme: == vs ===  
+🇷🇺 == сравнивает значения, приводит типы; === сравнивает и тип, и значение.  
+🇬🇧 == compares values and changes types if needed; === compares value and type.
 
-symbol — уникальный идентификатор
+7. Theme: Function Declaration vs Expression  
+🇷🇺 Function Declaration — поднимается; Function Expression — не поднимается.  
+🇬🇧 Function Declaration is hoisted; Function Expression is not hoisted.
 
-bigint — большое целое число
+8. Theme: Arrow Function  
+🇷🇺 Стрелочная функция — короткий синтаксис, не имеет собственного this.  
+🇬🇧 Arrow function — shorter syntax, no own this.
 
-object — объект (включает массивы, функции и т.д.)
+9. Theme: Callback Function  
+🇷🇺 Callback — функция, переданная в другую функцию и вызываемая внутри неё.  
+🇬🇧 Callback — function passed to another function and executed inside it.
 
+10. Theme: for, while, forEach  
+🇷🇺 for — универсальный цикл; while — пока условие истинно; forEach — перебирает элементы массива.  
+🇬🇧 for — universal loop; while — runs while condition is true; forEach — iterates over array elements.
 
-🇬🇧 There are 8 data types in JavaScript:
+11. Theme: Object  
+🇷🇺 Объект — коллекция пар ключ-значение.  
+🇬🇧 Object — collection of key-value pairs.
 
-string — a text
+12. Theme: Array  
+🇷🇺 Массив — упорядоченный список значений.  
+🇬🇧 Array — ordered list of values.
 
-number — a numeric value
+13. Theme: Array Methods  
+🇷🇺 Модифицирующие: push, pop, shift, unshift; Перебирающие: map, filter, forEach, reduce.  
+🇬🇧 Mutating: push, pop, shift, unshift; Iterating: map, filter, forEach, reduce.
 
-boolean — true or false
+14. Theme: map() vs forEach()  
+🇷🇺 forEach — просто выполняет функцию; map — возвращает новый массив.  
+🇬🇧 forEach just runs a function; map returns a new array.
 
-null — value is set to nothing on purpose
+15. Theme: Spread Operator  
+🇷🇺 Оператор расширения (...) копирует элементы массива или свойства объекта.  
+🇬🇧 Spread operator (...) copies array elements or object properties.
 
-undefined — variable is declared but not assigned
+---
 
-symbol — unique identifier
+✅ Часть 1. JavaScript (start middle)
 
-bigint — large integer
+16. Theme: Error Handling  
+🇷🇺 Обработка ошибок через try/catch, finally, throw.  
+🇬🇧 Error handling with try/catch, finally, throw.
 
-object — An object is a collection of key-value pairs.
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-2. Theme: let vs const vs var
-🇷🇺
-
-let — блочная область видимости, можно менять значение
-
-const — блочная, нельзя менять значение
-
-var — устаревший, область видимости — функция
-
-🇬🇧
-
-let — block-scoped, value can be changed
-
-const — block-scoped, value cannot be changed
-
-var — outdated, function-scoped
-
-let a = 1;
-const b = 2;
-var c = 3;
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-3. Theme: null vs undefined
-🇷🇺
-
-undefined — переменная объявлена, но значение не задано
-
-null — значение задано вручную как "ничего"
-
-🇬🇧
-
-undefined — variable is declared but not assigned
-
-null — value is set to nothing on purpose
-
-let x;        // undefined
-let y = null; // null
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-4. Theme: Hoisting
-🇷🇺
-Hoisting (поднятие) — это механизм, при котором объявления var и функций поднимаются вверх своей области видимости. let и const тоже поднимаются, но не инициализируются.
-
-🇬🇧
-Hoisting is a behavior where var and function declarations are moved to the top of their scope. let and const are hoisted too, but not initialized.
-
-console.log(a); // undefined
-var a = 5;
-
-console.log(b); // ReferenceError
-let b = 10;
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-5. Theme: Truthy and Falsy
-🇷🇺
-Falsy значения — это те, что интерпретируются как false в логических операциях:
-false, 0, "", null, undefined, NaN.
-Все остальные — truthy (истинные).
-
-🇬🇧
-Falsy values are interpreted as false in logical expressions:
-false, 0, "", null, undefined, NaN.
-Everything else is truthy.
-
-if (0) console.log("Falsy");
-if (1) console.log("Truthy"); // выполнится
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-6. Theme: == vs ===
-🇷🇺
-== сравнивает значения, при необходимости приводит типы.
-=== сравнивает и тип, и значение (строгое сравнение).
-
-🇬🇧
-== compares values and changes types if needed.
-=== compares value and type, no changes.
-
-🔹 == — "double equals"
-🔹 === — "triple equals"
-
-"5" == 5  // true
-"5" === 5 // false
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-7. Theme: Function Declaration vs Expression
-🇷🇺
-Function Declaration — поднимается (hoisting).
-Function Expression — не поднимается.
-
-🇬🇧
-Function Declaration is hoisted.
-Function Expression is not hoisted.
-
-// Declaration
-function sayHi() {
-  console.log("Hi");
+```js
+try {
+  // code
+} catch (e) {
+  console.error(e);
+} finally {
+  // always runs
 }
+```
 
-// Expression
-const sayHello = function () {
-  console.log("Hello");
+17. Theme: Working with API (fetch, axios)  
+🇷🇺 Для работы с API используют fetch или axios.  
+🇬🇧 Use fetch or axios to work with APIs.
+
+```js
+// fetch
+fetch(url)
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+
+// axios
+import axios from 'axios';
+axios.get(url)
+  .then(res => console.log(res.data))
+  .catch(err => console.error(err));
+```
+
+18. Theme: Promise & async/await  
+🇷🇺 Promise — объект для асинхронных операций; async/await — удобный синтаксис для работы с Promise.  
+🇬🇧 Promise — object for async operations; async/await — convenient syntax for Promise.
+
+```js
+const fetchData = async () => {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+  } catch (e) {
+    console.error(e);
+  }
 };
+```
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+19. Theme: Closure  
+🇷🇺 Замыкание — функция, которая "помнит" окружение, в котором была создана.  
+🇬🇧 Closure — function that "remembers" its creation context.
 
-8. Theme: Arrow Function
-🇷🇺
-Стрелочная функция — короткий синтаксис: () => {}
-Не имеет собственного this, берёт из внешнего контекста.
-
-🇬🇧
-Arrow function is a shorter syntax: () => {}
-It doesn’t have its own this, uses the outer context.
-
-const add = (a, b) => a + b;
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-9. Theme: Callback Function
-🇷🇺
-Callback — это функция, переданная в другую функцию и вызываемая внутри неё.
-
-🇬🇧
-Callback is a function passed to another function and executed inside it.
-
-function greet(name, callback) {
-  callback(`Hello, ${name}`);
+```js
+function outer() {
+  let count = 0;
+  return function() { count++; return count; }
 }
-greet("Tom", console.log);
+```
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+20. Theme: Scope  
+🇷🇺 Область видимости — где доступны переменные (глобальная, блочная, функциональная).  
+🇬🇧 Scope — where variables are accessible (global, block, function).
 
-10. Theme: for, while, forEach
-🇷🇺
+21. Theme: Event Loop & Call Stack  
+🇷🇺 Event Loop — механизм обработки асинхронных задач; Call Stack — стек вызовов функций.  
+🇬🇧 Event Loop — mechanism for handling async tasks; Call Stack — stack of function calls.
 
-for — универсальный цикл
+---
 
-while — пока условие истинно
+✅ Часть 2. ООП и паттерны
 
-forEach — перебирает элементы массива (не прерывается)
+22. Theme: Class & Inheritance  
+🇷🇺 Класс — шаблон для создания объектов; наследование — возможность расширять функционал.  
+🇬🇧 Class — template for creating objects; inheritance — ability to extend functionality.
 
-🇬🇧
-
-for — universal loop
-
-while — runs while condition is true
-
-forEach — iterates over array elements (can’t break)
-
-for (let i = 0; i < 3; i++) console.log(i);
-while (i < 3) console.log(i++);
-[1, 2, 3].forEach(num => console.log(num));
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-11. Theme: Object
-🇷🇺
-Объект — это коллекция пар ключ-значение.
-
-🇬🇧
-An object is a collection of key-value pairs.
-
-const user = { name: "Tom", age: 18 };
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-12. Theme: Array
-🇷🇺
-Массив — это упорядоченный список значений.
-
-🇬🇧
-An array is an ordered list of values.
-
-const numbers = [1, 2, 3];
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-13. Theme: Array Methods
-🇷🇺
-Методы массивов:
-
-Модифицирующие: push, pop, shift, unshift
-
-Перебирающие: map, filter, forEach, reduce
-
-🇬🇧
-Array methods:
-
-Mutating: push, pop, shift, unshift
-
-Iterating: map, filter, forEach, reduce
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-14. Theme: map() vs forEach()
-🇷🇺
-
-forEach — просто выполняет функцию
-
-map — возвращает новый массив
-
-🇬🇧
-
-forEach just runs a function
-
-map returns a new array
-
-[1, 2, 3].map(x => x * 2);     // [2, 4, 6]
-[1, 2, 3].forEach(x => x * 2); // ничего не вернёт
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-15. Theme: Spread Operator
-🇷🇺
-Оператор расширения (...) копирует элементы массива или свойства объекта.
-
-🇬🇧
-The spread operator (...) copies array elements or object properties.
-
-const arr = [1, 2];
-const copy = [...arr];
-
-const obj = { a: 1 };
-const clone = { ...obj };
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-✅ Часть 1. React (основа)
-
-Theme: JSX
-🇷🇺 JSX — это синтаксис, который позволяет писать HTML-подобный код внутри JavaScript. Он используется в React для описания интерфейса.
-🇬🇧 JSX is a syntax that lets you write HTML-like code inside JavaScript. It is used in React to describe the UI.
-
-const App = () => <h1>Hello, world!</h1>;
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: Components
-🇷🇺 Компоненты — это функции, которые возвращают JSX. Они позволяют делить интерфейс на маленькие части.
-🇬🇧 Components are functions that return JSX. They let you split the UI into small parts.
-
-function Welcome() {
-  return <p>Welcome to my app</p>;
+```js
+class Animal {
+  constructor(name) { this.name = name; }
+  speak() { console.log(`${this.name} speaks`); }
 }
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: Props
-🇷🇺 Пропсы — это способ передать данные от родителя к дочернему компоненту.
-🇬🇧 Props are a way to pass data from a parent to a child component.
-
-function Greeting(props) {
-  return <h1>Hello, {props.name}</h1>;
+class Dog extends Animal {
+  speak() { console.log(`${this.name} barks`); }
 }
+```
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+23. Theme: SOLID Principles  
+🇷🇺 SOLID — 5 принципов проектирования: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.  
+🇬🇧 SOLID — 5 design principles: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.
 
-Theme: useState
-🇷🇺 useState — это хук, который позволяет сохранять состояние и обновлять его.
-🇬🇧 useState is a hook that lets you store and update state in a component.
+24. Theme: Design Patterns  
+🇷🇺 Паттерны проектирования: Singleton, Observer, Factory, Module.  
+🇬🇧 Design patterns: Singleton, Observer, Factory, Module.
 
-const [count, setCount] = useState(0);
+---
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+✅ Часть 3. React (основа и middle)
 
-Theme: useEffect
-🇷🇺 useEffect — это хук для выполнения побочных эффектов: загрузка данных, таймеры и т.п.
-🇬🇧 useEffect is a hook to run side effects like data loading, timers.
-
-useEffect(() => {
-  console.log('Component mounted');
-}, []);
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: Conditional Rendering
-🇷🇺 React позволяет рендерить элементы по условиям.
-🇬🇧 React lets you render elements based on a condition.
-
-{isLoggedIn ? <Dashboard /> : <Login />}
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: Lists and Keys
-🇷🇺 Списки рендерятся через .map(), key нужен для оптимизации.
-🇬🇧 Lists are rendered using .map(), and key helps React update them faster.
-
-items.map(item => <li key={item.id}>{item.name}</li>)
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: Forms and Events
-🇷🇺 Формы обрабатываются через onChange, onSubmit.
-🇬🇧 Forms are handled using onChange, onSubmit.
-
-<input value={text} onChange={e => setText(e.target.value)} />
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: useRef
-🇷🇺 useRef позволяет получить доступ к DOM или хранить значение без рендера.
-🇬🇧 useRef lets you access DOM or store values without re-render.
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: useContext
-🇷🇺 useContext позволяет передавать данные, не используя props на каждом уровне.
-🇬🇧 useContext lets you pass data without props at every level.
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: Component Lifecycle (фазы жизни)
-🇷🇺 В функциональных компонентах useEffect заменяет старые методы (componentDidMount, componentDidUpdate).
-🇬🇧 In functional components, useEffect replaces old lifecycle methods like componentDidMount.
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+25. Theme: JSX  
+🇷🇺 JSX — синтаксис для описания UI в React.  
+🇬🇧 JSX — syntax for describing UI in React.
 
 
+26. Theme: Component Lifecycle  
+🇷🇺 Жизненный цикл компонента: mounting, updating, unmounting (useEffect, componentDidMount и др.).  
+🇬🇧 Component lifecycle: mounting, updating, unmounting (useEffect, componentDidMount, etc.).
 
+27. Theme: Context  
+🇷🇺 Context — механизм передачи данных между компонентами без пропсов.  
+🇬🇧 Context — way to pass data between components without props.
 
+28. Theme: Memoization & Optimization  
+🇷🇺 Мемоизация (React.memo, useMemo, useCallback) — оптимизация рендера.  
+🇬🇧 Memoization (React.memo, useMemo, useCallback) — render optimization.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+29. Theme: Testing (Jest, React Testing Library)  
+🇷🇺 Тестирование компонентов: Jest — фреймворк для тестов, React Testing Library — для тестирования UI.  
+🇬🇧 Component testing: Jest — test framework, React Testing Library — for UI testing.
 
-✅ Часть 2. Next.js (основа)
+```js
+// Jest
+test('adds 1 + 2 to equal 3', () => {
+  expect(1 + 2).toBe(3);
+});
 
-Theme: What is Next.js?
-🇷🇺 Next.js — это фреймворк поверх React. Он добавляет SSR (серверный рендеринг), маршрутизацию и оптимизацию.
-🇬🇧 Next.js is a framework on top of React. It adds SSR (server-side rendering), routing, and optimization.
+// React Testing Library
+import { render, screen } from '@testing-library/react';
+render(<Button />);
+expect(screen.getByText('Click')).toBeInTheDocument();
+```
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+30. Theme: Prototype & Prototypal Inheritance
+🇷🇺 В JavaScript объекты наследуют свойства через прототипы (__proto__). Каждая функция имеет prototype, что позволяет реализовать наследование.
+🇬🇧 In JavaScript, objects inherit properties via prototypes (__proto__). Every function has a prototype used for inheritance.
 
-Theme: File-based Routing
-🇷🇺 В Next.js каждая папка и файл в app/ или pages/ — это маршрут.
-🇬🇧 In Next.js, every folder and file in app/ or pages/ is a route.
+function Animal(name) { this.name = name; }
+Animal.prototype.speak = function() { console.log(this.name + " speaks"); };
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+const dog = new Animal("Rex");
+dog.speak(); // Rex speaks
 
-Theme: Server Components vs Client Components
-🇷🇺 Server компоненты работают на сервере. Client — в браузере.
-🇬🇧 Server components run on the server. Client components run in the browser.
+31. Theme: this Binding
+🇷🇺 this зависит от контекста вызова:
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+в объекте → сам объект;
 
-Theme: API Routes
-🇷🇺 Можно создавать свои API прямо в Next.js (в папке api).
-🇬🇧 You can create your own API in Next.js (in the api folder).
+в функции → глобальный объект (или undefined в strict mode);
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+в стрелочной функции → берётся из внешнего scope;
 
-Theme: Static Generation vs Server-side Rendering
-🇷🇺 Static — страница генерируется на билде. Server-side — на каждый запрос.
-🇬🇧 Static means page is built at build time. Server-side means on every request.
+можно менять с помощью call, apply, bind.
+🇬🇧 this depends on call context:
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+in object → the object;
 
-Theme: useRouter()
-🇷🇺 Хук для управления маршрутами.
-🇬🇧 A hook to manage routes.
+in function → global object (or undefined in strict mode);
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+in arrow function → lexical scope;
 
+can be changed with call, apply, bind.
 
+32. Theme: call, apply, bind
+🇷🇺 Методы для управления this:
 
+call(thisArg, ...args) — вызывает функцию сразу;
 
+apply(thisArg, [args]) — тоже, но принимает массив;
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+bind(thisArg) — возвращает новую функцию с привязанным this.
+🇬🇧 Methods to control this:
 
-✅ Часть 3. TypeScript (в React)
+call(thisArg, ...args) — invokes immediately;
 
-Theme: Зачем нужен TypeScript?
-🇷🇺 TypeScript помогает избежать ошибок. Он показывает, где ты передаёшь не тот тип.
-🇬🇧 TypeScript helps avoid bugs. It shows when you pass a wrong type.
+apply(thisArg, [args]) — same but takes array;
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+bind(thisArg) — returns new function with bound this.
 
-Theme: Типизация props и state
-🇷🇺 Можно указать, какие типы принимает компонент.
-🇬🇧 You can define what types a component accepts.
+33. Theme: Prototype vs Class
+🇷🇺 Классы в JS — синтаксический сахар над прототипами. Внутри они работают через прототипное наследование.
+🇬🇧 Classes in JS are syntactic sugar over prototypes. They still use prototypal inheritance under the hood.
 
-type Props = {
-  name: string;
-};
+34. Theme: Shallow Copy vs Deep Copy
+🇷🇺 Поверхностное копирование (Object.assign, spread) копирует только верхний уровень. Глубокое копирование (JSON.parse(JSON.stringify()), structuredClone) копирует все уровни.
+🇬🇧 Shallow copy (Object.assign, spread) copies only first level. Deep copy (JSON.parse(JSON.stringify()), structuredClone) copies all levels.
 
-const Hello = ({ name }: Props) => <h1>Hello, {name}</h1>;
+35. Theme: Debounce & Throttle
+🇷🇺 Debounce — функция вызывается только после паузы. Throttle — функция вызывается не чаще, чем раз в заданный промежуток.
+🇬🇧 Debounce — function runs only after a pause. Throttle — function runs at most once per interval.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: Типизация useState
-const [count, setCount] = useState<number>(0);
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: Типизация функций
-const greet = (name: string): void => {
-  console.log('Hello', name);
-};
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: Типизация событий
-const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {};
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Theme: Типизация useRef
-const inputRef = useRef<HTMLInputElement>(null);
+36. Theme: Event Delegation
+🇷🇺 Навешиваем обработчик на родителя и ловим события от потомков через event.target. Оптимизирует DOM-слушатели.
+🇬🇧 Attach handler to parent and catch child events via event.target. Optimizes DOM listeners.
