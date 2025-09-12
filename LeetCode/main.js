@@ -141,3 +141,98 @@ function Acc(arr) {
 console.log(Acc([1, 2, 3])); // → 6
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// containsDuplicate
+// если 1 одинаковых числа верни true а если нет дубликатов то верни false
+
+const containsDuplicate = (nums) => {
+  let seen = new Set();
+
+  for (let num of nums) {
+    if (seen.has(num)) {
+      return true;
+    }
+    seen.add(num);
+  }
+  return false;
+};
+console.log(containsDuplicate([1, 2, 3, 1]));
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// isAnagram
+// s = "rat", t = "car"
+
+function isAnagram(s, t) {
+  return s.split("").sort().join("") === t.split("").sort().join("");
+}
+console.log(isAnagram("car", "car"));
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// isPalindrome
+
+function isPalindrome(x) {
+  return x.toString().split("").reverse().join("") === x.toString();
+}
+console.log(isPalindrome(121));
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Тебе нужно добавить в прототип массива (Array.prototype) метод last, который будет:
+// возвращать последний элемент массива,
+// если массив пустой — возвращать -1.
+
+Array.prototype.last = function () {
+  return this.length > 0 ? this[this.length - 1] : -1;
+};
+const arr1 = [1, 2, 3];
+console.log(arr1.last()); // 👉 3
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// 📌 Условие:
+// Дан массив чисел nums и число target.
+// Нужно найти индексы двух элементов, сумма которых равна target.
+// Каждый входной массив гарантированно имеет ровно одно решение.
+// Нельзя использовать один и тот же элемент дважды.
+// Порядок индексов неважен (обычно возвращают в массиве [i, j]).
+
+// (nums, target)
+// nums = [2, 7, 11, 15], target = 9
+// 2 + 7 = 9
+// ответ: [0, 1]
+
+function TwoSum(nums, target) {
+  let seen = new Set();
+
+  for (num of nums) {
+    let result = target - num;
+
+    if (seen.has(result)) {
+      return seen.has(result);
+    }
+  }
+}
+console.log(TwoSum([1, 2, 7, 3, 3, 2], 9));
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// новый массив если естьь одинаковые убрать оставить только уникальные
+// если в массиве нету такого числа то добавляй а если есть скипай
+
+function Func(array) {
+  let seen = new Set();
+  let newArray = [];
+
+  for (let num of array) {
+    if (!seen.has(num)) {
+      seen.add(num);
+      newArray.push(num);
+    }
+  }
+  return newArray;
+}
+console.log(Func([1, 1, 2, 2, 3, 3]));
+
+// 1, 2, 3
