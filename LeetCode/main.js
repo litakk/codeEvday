@@ -204,15 +204,18 @@ console.log(arr1.last()); // 👉 3
 // ответ: [0, 1]
 
 function TwoSum(nums, target) {
-  let seen = new Set();
+  let seen = new Map();
 
-  for (num of nums) {
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i];
     let result = target - num;
 
     if (seen.has(result)) {
-      return seen.has(result);
+      return [seen.get(result), i];
     }
+    seen.set(num, i);
   }
+  return [];
 }
 console.log(TwoSum([1, 2, 7, 3, 3, 2], 9));
 
