@@ -1,8 +1,12 @@
 ✅ Часть 0. JavaScript (основа)
 
-1. Theme: Data Types in JavaScript  
-🇷🇺 В JavaScript существует 8 типов данных: string, number, boolean, null, undefined, symbol, bigint, object(function, object, array).  
-🇬🇧 There are 8 data types in JavaScript: string, number, boolean, null, undefined, symbol, bigint, object.
+🇷🇺 В JavaScript существует 8 типов данных:
+7 примитивных: string, number, bigint, boolean, undefined, null, symbol
+1 ссылочный: object (включает объекты, массивы, функции)
+
+🇬🇧 There are 8 data types in JavaScript:
+7 primitive: string, number, bigint, boolean, undefined, null, symbol
+1 reference: object (includes objects, arrays, functions)
 
 2. Theme: let vs const vs var  
 🇷🇺 let — блочная область видимости, можно менять значение; const — блочная, нельзя менять значение; var — устаревший, область видимости — функция.  
