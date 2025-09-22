@@ -219,23 +219,6 @@ function TwoSum(nums, target) {
 }
 console.log(TwoSum([1, 2, 7, 3, 3, 2], 9));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // новый массив если естьь одинаковые убрать оставить только уникальные
@@ -256,3 +239,20 @@ function Func(array) {
 console.log(Func([1, 1, 2, 2, 3, 3]));
 
 // 1, 2, 3
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+var groupAnagrams = function (strs) {
+  let seen = new Map();
+
+  for(let str of strs) {
+    let key = str.split("").sort().join('')
+
+    if(!seen.has(key)) {
+      seen.set(key, [])
+    }
+    seen.get(key).push(str)
+  }
+};
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+
