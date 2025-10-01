@@ -245,14 +245,61 @@ console.log(Func([1, 1, 2, 2, 3, 3]));
 var groupAnagrams = function (strs) {
   let seen = new Map();
 
-  for(let str of strs) {
-    let key = str.split("").sort().join('')
+  for (let str of strs) {
+    let key = str.split("").sort().join("");
 
-    if(!seen.has(key)) {
-      seen.set(key, [])
+    if (!seen.has(key)) {
+      seen.set(key, []);
     }
-    seen.get(key).push(str)
+    seen.get(key).push(str);
   }
 };
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// бинарный поиск – делим массив пополам на каждом шаге
+// линейный поиск - итерация по каждому элементу
+// логорифм - log2 8=3 => 2*2*2=8 => 2(3)=8
+
+function binarySearch(arr, target) {
+  // функция принимает отсортированный массив arr и элемент target, который нужно найти
+
+  let left = 0;
+  // левая граница поиска (начало массива)
+
+  let right = arr.length - 1;
+  // правая граница поиска (конец массива)
+
+  while (left <= right) {
+    // пока границы не пересеклись (есть что искать)
+
+    let mid = Math.floor((left + right) / 2);
+    // середина текущего диапазона (делим пополам)
+
+    if (arr[mid] === target) {
+      // если элемент в середине равен target
+      return mid;
+      // возвращаем индекс найденного элемента
+    }
+
+    if (arr[mid] < target) {
+      // если середина меньше target
+      left = mid + 1;
+      // сдвигаем левую границу вправо (ищем в правой половине массива)
+    } else {
+      // иначе (arr[mid] > target)
+      right = mid - 1;
+      // сдвигаем правую границу влево (ищем в левой половине массива)
+    }
+  }
+
+  return -1;
+  // если элемент не найден — возвращаем -1
+}
+
+// пример использования:
+console.log(binarySearch([1, 3, 5, 7, 9, 11], 7)); // выведет 3 (индекс элемента 7)
+console.log(binarySearch([1, 3, 5, 7, 9, 11], 2)); // выведет -1 (такого элемента нет)
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -1,18 +1,25 @@
 /**
- * @param {string[]} strs
- * @return {string[][]}
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
  */
-var groupAnagrams = function (strs) {
-  let seen = new Map();
+var search = function (nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
 
-  for (let str of strs) {
-    let key = str.split("").sort().join("");
-    if (!seen.has(key)) {
-      seen.set(key, []);
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+
+    if (nums[mid] === target) {
+      return mid;
     }
-    seen.get(key).push(str);
-  }
 
-  return Array.from(seen.values());
+    if (nums[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+  return -1;
 };
-console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+console.log(search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 4);
