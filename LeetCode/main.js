@@ -303,3 +303,23 @@ console.log(binarySearch([1, 3, 5, 7, 9, 11], 7)); // выведет 3 (инде
 console.log(binarySearch([1, 3, 5, 7, 9, 11], 2)); // выведет -1 (такого элемента нет)
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+var isValid = function (s) {
+    let stack = []
+
+    let splitWord = s.split("")
+
+    for (let i of splitWord) {
+        if (i === "(" || i === "[" || i === "{") {
+            stack.push(i)
+        } else {
+            let low = stack.pop()
+            if (i === ")" && "(" !== low) return false
+            if (i === "]" && "[" !== low) return false
+            if (i === "}" && "{" !== low) return false
+        }
+    }
+    return stack.length === 0
+}
+
+isValid("()[]}")

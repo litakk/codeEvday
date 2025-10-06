@@ -1,25 +1,27 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number}
- */
-var search = function (nums, target) {
-  let left = 0;
-  let right = nums.length - 1;
+var nextGreaterElement = function(nums1, nums2) {
+  let result = []
 
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2);
+  for (let num of nums1) {
+    // 1️⃣ ищем индекс этого числа в nums2
+    let index = nums2.indexOf(num)
 
-    if (nums[mid] === target) {
-      return mid;
+    // 2️⃣ флаг — нашли ли большее
+    let found = -1
+
+    // 3️⃣ идём вправо от позиции index
+    for (let j = index + 1; j < nums2.length; j++) {
+      if (nums2[j] > num) {
+        found = nums2[j] // нашли первое большее
+        break // сразу выходим
+      }
     }
 
-    if (nums[mid] < target) {
-      left = mid + 1;
-    } else {
-      right = mid - 1;
-    }
+    // 4️⃣ добавляем найденное значение (или -1)
+    result.push(found)
   }
-  return -1;
-};
-console.log(search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 4);
+
+  return result
+}
+
+console.log(nextGreaterElement([4,1,2], [1,3,4,2])) // [-1, 3, -1]
+console.log(nextGreaterElement([2,4], [1,2,3,4]))   // [3, -1]
