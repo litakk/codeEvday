@@ -1,22 +1,16 @@
 /**
- * @param {number} n
- * @return {string[]}
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
  */
-var fizzBuzz = function (n) {
-  let arr = [];
-
-  for (let i = 1; i <= n; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      arr.push("FizzBuzz");
-    } else if (i % 3 === 0) {
-      arr.push("Fizz");
-    } else if (i % 5 === 0) {
-      arr.push("Buzz");
-    } else {
-      arr.push(i.toString());
+var moveZeroes = function (nums) {
+  for (let i = nums.length - 1; i >= 0; i--) {
+    if (nums[i] === 0) {
+      nums.splice(i, 1);
+      nums.push(0);
     }
   }
-  return arr;
+  return nums
 };
 
-console.log(fizzBuzz(5));
+// Input: nums = [0,1,0,3,12]
+// Output: [1,3,12,0,0]
