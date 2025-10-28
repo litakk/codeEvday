@@ -1,23 +1,22 @@
 /**
- * @param {string} s
- * @return {boolean}
+ * @param {number} n
+ * @return {string[]}
  */
-var isPalindrome = function (s) {
-  // "A man, a plan, a canal: Panama"
-  let filter1 = s.toLowerCase().trim(); // a man, a plan, a canal: panama
-  let res = "";
-  for (let i = 0; i < filter1.length; i++) {
-    let char = filter1[i];
+var fizzBuzz = function (n) {
+  let arr = [];
 
-    if ((char >= "a" && char <= "z") || (char >= "0" && char <= "9")) {
-      res += char;
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      arr.push("FizzBuzz");
+    } else if (i % 3 === 0) {
+      arr.push("Fizz");
+    } else if (i % 5 === 0) {
+      arr.push("Buzz");
+    } else {
+      arr.push(i.toString());
     }
   }
-
-  if (res === res.split("").reverse().join("")) {
-    return true;
-  } else return false;
+  return arr;
 };
 
-console.log(isPalindrome("A man, a plan, a canal: Panama"));
-
+console.log(fizzBuzz(5));
