@@ -1,16 +1,33 @@
 /**
- * @param {number[]} nums
- * @return {void} Do not return anything, modify nums in-place instead.
+ * @param {string[]} operations
+ * @return {number}
  */
-var moveZeroes = function (nums) {
-  for (let i = nums.length - 1; i >= 0; i--) {
-    if (nums[i] === 0) {
-      nums.splice(i, 1);
-      nums.push(0);
+var calPoints = function (operations) {
+  let total = [];
+
+  for (let i = 0; i < operations.length; i++) {
+    const op = operations[i];
+
+    if (op === "+") {
+      total.push(total[total.length - 1] + total[total.length - 2]);
+    } else if (op === "D") {
+      total.push(total[total.length - 1] * 2);
+    } else if (op === "C") {
+      total.pop();
+    } else {
+      total.push(parseInt(op));
     }
   }
-  return nums
+  return total.reduce((acc, cur) => acc + cur, 0);
 };
 
-// Input: nums = [0,1,0,3,12]
-// Output: [1,3,12,0,0]
+console.log(calPoints(["5", "2", "C", "D", "+"]));
+
+// Input: ops = ["5","2","C","D","+"]
+// Output: 30
+
+// Input: ops = ["5","-2","4","C","D","9","+","+"]
+// Output: 27
+
+// Input: ops = ["1","C"]
+// Output: 0
