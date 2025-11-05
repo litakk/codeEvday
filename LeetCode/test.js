@@ -1,14 +1,18 @@
 /**
- * @param {number} num
- * @return {boolean}
+ * @param {Array} arr
+ * @param {number} size
+ * @return {Array}
  */
-var isPerfectSquare = function (num) {
-  for (let i = 0; i < num; i++) {
-    if (i * i === num) {
-      return true;
-    }
+var chunk = function (arr, size) {
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i += size) {
+    newArr.push(arr.slice(i, i + size));
   }
-  return false;
+
+  return newArr;
 };
-// 4 * 4 = 16
-console.log(isPerfectSquare(16));
+console.log(chunk([1, 2, 3, 4, 5], 1));
+
+// Input: arr = [1,2,3,4,5], size = 1
+// Output: [[1],[2],[3],[4],[5]]
