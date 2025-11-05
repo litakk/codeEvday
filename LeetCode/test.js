@@ -1,28 +1,19 @@
 /**
- * @param {string} s
- * @return {string}
+ * @param {number[]} nums
+ * @return {number[]}
  */
-var reverseVowels = function (s) {
-  let seen = new Set(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]);
-  let arr = s.split("");
-  let left = 0;
-  let right = s.length - 1;
-
-  while (left > right) {
-    if (!seen.has(arr[left])) {
-      left++;
-      continue;
+var findDisappearedNumbers = function (nums) {
+  let seen = new Set(nums);
+  let arr = [];
+  let n = nums.length
+  for (let i = 1; i <= n; i++) {
+    if (!seen.has(i)) {
+      arr.push(i);
     }
-
-    if (!seen.has(arr[right])) {
-      right--;
-      continue;
-    }
-
-    [arr[left], arr[right]] = [arr[right], arr[left]];
-    left++;
-    right--;
   }
-
-  return arr.join("");
+  return arr;
 };
+console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
+
+// Input: nums = [4,3,2,7,8,2,3,1]
+// Output: [5,6]
