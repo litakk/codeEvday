@@ -1,18 +1,17 @@
 /**
- * @param {Array} arr
- * @param {number} size
- * @return {Array}
+ * @param {number} num
+ * @return {number}
  */
-var chunk = function (arr, size) {
-  let newArr = [];
-
-  for (let i = 0; i < arr.length; i += size) {
-    newArr.push(arr.slice(i, i + size));
+var addDigits = function (num) {
+  while (num >= 10) {
+    num = num
+      .toString()
+      .split("")
+      .reduce((sum, digit) => sum + +digit, 0);
   }
-
-  return newArr;
+  return num;
 };
-console.log(chunk([1, 2, 3, 4, 5], 1));
+console.log(addDigits(38));
 
-// Input: arr = [1,2,3,4,5], size = 1
-// Output: [[1],[2],[3],[4],[5]]
+// Input: num = 38
+// Output: 2
