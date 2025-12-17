@@ -16,28 +16,58 @@
 1 reference: object (includes objects, arrays, functions)
 
 2. Theme: let vs const vs var  
-🇷🇺 let — блочная область видимости, можно менять значение; const — блочная, нельзя менять значение; var — устаревший, область видимости — функция.  
+🇷🇺 let — блочная область видимости, можно менять значение; const — блочная, нельзя менять значение; var — область видимости — функция.  
 🇬🇧 let — block-scoped, value can be changed; const — block-scoped, value cannot be changed; var — outdated, function-scoped.
 
-3. Theme: null vs undefined  
+3. Theme: null vs undefined
 🇷🇺 undefined — переменная объявлена, но значение не задано; null — значение задано вручную как "ничего".  
 🇬🇧 undefined — variable is declared but not assigned; null — value is set to nothing on purpose.
 
 4. Theme: Hoisting  
-🇷🇺 Hoisting (поднятие) — объявления var и функций поднимаются вверх области видимости. let и const тоже поднимаются, но не инициализируются.  
+🇷🇺 Hoisting (поднятие) — объявления var и функций поднимаются вверх области видимости. let и const тоже поднимаются.  
 🇬🇧 Hoisting is a behavior where var and function declarations are moved to the top of their scope. let and const are hoisted too, but not initialized.
 
 5. Theme: Truthy and Falsy  
-🇷🇺 Falsy значения: false, 0, "", null, undefined, NaN. Остальные — truthy.  
+🇷🇺 Falsy значения: false, 0, "", null, undefined, NaN. Остальные — truthy.
 🇬🇧 Falsy values: false, 0, "", null, undefined, NaN. Everything else is truthy.
 
 6. Theme: == vs ===  
-🇷🇺 == сравнивает значения, приводит типы; === сравнивает и тип, и значение.  
-🇬🇧 == compares values and changes types if needed; === compares value and type.
+🇷🇺 == сравнивает значения; === сравнивает и тип, и значение.  
+🇬🇧 == compares values; === compares value and type.
 
-7. Theme: Function Declaration vs Expression  
-🇷🇺 Function Declaration — поднимается; Function Expression — не поднимается.  
+7. Theme: что такое Function Declaration и Expression  
+
+Есть несколько видов переменных 
+
+Function Declaration (объявление функции)
+Поднимается (hoisting) — можно вызывать до объявления
+function greet() {
+  console.log("Hello");
+}
+greet();
+
+
+Function Expression (объявление функции через переменную, нельзя вызывать до объявления)
+const greet = function () {
+  console.log("Hello");
+};
+greet();
+
+
+Arrow Function (стрелочная функция)
+const greet = () => {
+  console.log("Hello");
+};
+
+// короткая форма
+const sum = (a, b) => a + b;
+
+
 🇬🇧 Function Declaration is hoisted; Function Expression is not hoisted.
+
+Что такое Function Declaration и Function Expression? 
+Declaration: “It’s a hoisted function — I can call it earlier.”
+Expression: “It’s a function in a variable — not hoisted.”
 
 8. Theme: Arrow Function  
 🇷🇺 Стрелочная функция — короткий синтаксис, не имеет собственного this.  
@@ -45,7 +75,7 @@
 
 9. Theme: Callback Function  
 🇷🇺 Callback — функция, переданная в другую функцию и вызываемая внутри неё.  
-🇬🇧 Callback — function passed to another function and executed inside it.
+🇬🇧 Callback — function that runs after another function finishes.
 
 10. Theme: for, while, forEach  
 🇷🇺 for — универсальный цикл; while — пока условие истинно; forEach — перебирает элементы массива.  
@@ -207,7 +237,7 @@ expect(screen.getByText('Click')).toBeInTheDocument();
 
 30. Theme: Prototype & Prototypal Inheritance
 🇷🇺 В JavaScript объекты наследуют свойства через прототипы (__proto__). Каждая функция имеет prototype, что позволяет реализовать наследование.
-🇬🇧 In JavaScript, objects inherit properties via prototypes (__proto__). Every function has a prototype used for inheritance.
+🇬🇧 In JavaScript, objects inherit properties through prototypes (__proto__). Every function has a prototype used for inherit.
 
 function Animal(name) { this.name = name; }
 Animal.prototype.speak = function() { console.log(this.name + " speaks"); };
