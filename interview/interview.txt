@@ -268,7 +268,7 @@ can be changed with call, apply, bind.
 32. Theme: call, apply, bind
 🇷🇺 Методы для управления this:
 
-call(thisArg, ...args) — вызывает функцию сразу;
+ call(thisArg, ...args) — вызывает функцию сразу;
 
 apply(thisArg, [args]) — тоже, но принимает массив;
 
